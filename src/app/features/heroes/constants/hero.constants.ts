@@ -1,0 +1,20 @@
+export const HERO_FIELDS = {
+  id: 'id',
+  name: 'name',
+  alterEgo: 'alterEgo',
+  publisher: 'publisher',
+  powers: 'powers',
+  powerLevel: 'powerLevel',
+  firstAppearance: 'firstAppearance',
+  active: 'active',
+} as const;
+
+export const HERO_PUBLISHERS = {
+  dc: 'DC Comics',
+  marvel: 'Marvel Comics',
+  other: 'Otros',
+} as const;
+
+export type HeroPublisher = (typeof HERO_PUBLISHERS)[keyof typeof HERO_PUBLISHERS];
+
+export const HERO_PUBLISHER_VALUES: readonly HeroPublisher[] = Object.values(HERO_PUBLISHERS);
