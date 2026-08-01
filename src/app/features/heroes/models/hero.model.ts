@@ -4,6 +4,7 @@ export interface Hero {
   readonly id: string;
   readonly name: string;
   readonly alterEgo: string | null;
+  readonly imageUrl: string | null;
   readonly publisher: HeroPublisher;
   readonly powers: readonly string[];
   readonly powerLevel: number;

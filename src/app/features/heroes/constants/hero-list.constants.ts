@@ -12,6 +12,7 @@ export const SEARCH_DEBOUNCE_MS = 300;
 export const HERO_ACTIONS_COLUMN = 'actions';
 
 export const HERO_TABLE_COLUMNS = [
+  HERO_FIELDS.imageUrl,
   HERO_FIELDS.name,
   HERO_FIELDS.alterEgo,
   HERO_FIELDS.publisher,

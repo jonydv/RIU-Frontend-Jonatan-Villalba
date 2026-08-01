@@ -4,6 +4,7 @@ export const HERO_FIELDS = {
   id: 'id',
   name: 'name',
   alterEgo: 'alterEgo',
+  imageUrl: 'imageUrl',
   publisher: 'publisher',
   powers: 'powers',
   powerLevel: 'powerLevel',
