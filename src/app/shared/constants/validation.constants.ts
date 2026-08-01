@@ -8,5 +8,4 @@ export const VALIDATION_ERROR_KEYS = {
   futureDate: 'futureDate',
 } as const;
 
-export type ValidationErrorKey =
-  (typeof VALIDATION_ERROR_KEYS)[keyof typeof VALIDATION_ERROR_KEYS];
+export type ValidationErrorKey = (typeof VALIDATION_ERROR_KEYS)[keyof typeof VALIDATION_ERROR_KEYS];
