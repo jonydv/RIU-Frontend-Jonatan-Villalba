@@ -1,3 +1,5 @@
+import type { HeroField } from '../models/hero.model';
+
 export const HERO_FIELDS = {
   id: 'id',
   name: 'name',
@@ -7,7 +9,7 @@ export const HERO_FIELDS = {
   powerLevel: 'powerLevel',
   firstAppearance: 'firstAppearance',
   active: 'active',
-} as const;
+} as const satisfies Record<HeroField, HeroField>;
 
 export const HERO_PUBLISHERS = {
   dc: 'DC Comics',
