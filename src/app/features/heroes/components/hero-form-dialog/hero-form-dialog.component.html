@@ -1,0 +1,126 @@
+@if (data.mode === formModes.create) {
+  <h2 mat-dialog-title i18n="Title of the create hero dialog">Nuevo héroe</h2>
+} @else {
+  <h2 mat-dialog-title i18n="Title of the edit hero dialog">Editar héroe</h2>
+}
+
+<mat-dialog-content>
+  <form [formGroup]="form" class="hero-form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero name field">Nombre</mat-label>
+      <input matInput appUppercase formControlName="name" autocomplete="off" />
+      @if (form.controls.name.pending) {
+        <mat-hint i18n="Hint shown while the hero name is being validated">Verificando…</mat-hint>
+      }
+      @if (form.controls.name.hasError(errorKeys.required)) {
+        <mat-error i18n="Error shown when the hero name is empty">El nombre es obligatorio.</mat-error>
+      } @else if (form.controls.name.hasError(errorKeys.minlength)) {
+        <mat-error i18n="Error shown when the hero name is too short">
+          Mínimo {{ limits.nameMinLength }} caracteres.
+        </mat-error>
+      } @else if (form.controls.name.hasError(errorKeys.maxlength)) {
+        <mat-error i18n="Error shown when the hero name is too long">
+          Máximo {{ limits.nameMaxLength }} caracteres.
+        </mat-error>
+      } @else if (form.controls.name.hasError(errorKeys.duplicatedName)) {
+        <mat-error i18n="Error shown when the hero name already exists">
+          Ya existe un héroe con ese nombre.
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero alter ego field">Alter ego</mat-label>
+      <input matInput formControlName="alterEgo" autocomplete="off" />
+      @if (form.controls.alterEgo.hasError(errorKeys.maxlength)) {
+        <mat-error i18n="Error shown when the alter ego is too long">
+          Máximo {{ limits.alterEgoMaxLength }} caracteres.
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero image url field">URL de la imagen</mat-label>
+      <input matInput formControlName="imageUrl" type="url" autocomplete="off" />
+      <mat-icon matSuffix>image</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero publisher field">Editorial</mat-label>
+      <mat-select formControlName="publisher">
+        @for (publisher of publishers; track publisher) {
+          <mat-option [value]="publisher">{{ publisher }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero powers field">Poderes</mat-label>
+      <mat-chip-grid #powerGrid formControlName="powers">
+        @for (power of powersControl.value; track power) {
+          <mat-chip-row (removed)="removePower(power)">
+            {{ power }}
+            <button matChipRemove [attr.aria-label]="'Quitar ' + power">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        }
+      </mat-chip-grid>
+      <input
+        [matChipInputFor]="powerGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeyCodes"
+        [matChipInputAddOnBlur]="true"
+        (matChipInputTokenEnd)="addPower($event)"
+        i18n-placeholder="Placeholder of the hero powers field"
+        placeholder="Agregar poder"
+      />
+      @if (form.controls.powers.hasError(errorKeys.required)) {
+        <mat-error i18n="Error shown when the hero has no powers">
+          Agregá al menos un poder.
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <div class="hero-form__slider">
+      <label for="powerLevel" i18n="Label of the hero power level field">
+        Nivel de poder: {{ form.controls.powerLevel.value }}
+      </label>
+      <mat-slider [min]="limits.minPowerLevel" [max]="limits.maxPowerLevel" [discrete]="true">
+        <input matSliderThumb id="powerLevel" formControlName="powerLevel" />
+      </mat-slider>
+    </div>
+
+    <mat-form-field appearance="outline">
+      <mat-label i18n="Label of the hero first appearance field">Primera aparición</mat-label>
+      <input matInput formControlName="firstAppearance" type="date" />
+      @if (form.controls.firstAppearance.hasError(errorKeys.required)) {
+        <mat-error i18n="Error shown when the first appearance date is empty">
+          La fecha es obligatoria.
+        </mat-error>
+      } @else if (form.controls.firstAppearance.hasError(errorKeys.futureDate)) {
+        <mat-error i18n="Error shown when the first appearance date is in the future">
+          La fecha no puede ser futura.
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="active" i18n="Label of the hero active toggle">
+      Héroe activo
+    </mat-slide-toggle>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button type="button" (click)="cancel()" i18n="Label of the cancel button">
+    Cancelar
+  </button>
+  <button
+    mat-flat-button
+    type="button"
+    [disabled]="form.invalid || saving()"
+    (click)="submit()"
+    i18n="Label of the save button"
+  >
+    Guardar
+  </button>
+</mat-dialog-actions>

@@ -5,6 +5,10 @@
       {{ store.heroPage().total }} héroes encontrados
     </p>
   </div>
+  <button mat-flat-button type="button" (click)="onCreate()">
+    <mat-icon>add</mat-icon>
+    <span i18n="Label of the create hero button">Nuevo héroe</span>
+  </button>
 </header>
 
 <div class="hero-list-page__toolbar">
@@ -26,9 +30,17 @@
     </p>
   </div>
 } @else if (store.effectiveViewMode() === viewModes.card) {
-  <app-hero-card-list [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
+  <app-hero-card-list
+    [heroes]="store.heroPage().items"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  />
 } @else {
-  <app-hero-table [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
+  <app-hero-table
+    [heroes]="store.heroPage().items"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  />
 }
 
 <mat-paginator

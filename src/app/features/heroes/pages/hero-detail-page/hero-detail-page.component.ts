@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { of } from 'rxjs';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { combineLatest, of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { MatChip, MatChipSet } from '@angular/material/chips';
 import { MatProgressBar } from '@angular/material/progress-bar';
@@ -9,6 +9,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { HeroService } from '../../data/hero.service';
 import { HeroDeleteFlowService } from '../../services/hero-delete-flow.service';
+import { HeroFormFlowService } from '../../services/hero-form-flow.service';
 import {
   ROUTE_PARAMS,
   routeToHeroList,
@@ -28,12 +29,15 @@ export class HeroDetailPageComponent {
   private readonly router = inject(Router);
   private readonly heroService = inject(HeroService);
   private readonly heroDeleteFlow = inject(HeroDeleteFlowService);
+  private readonly heroFormFlow = inject(HeroFormFlowService);
+
+  private readonly refreshTrigger = signal(0);
 
   protected readonly routeToHeroList = routeToHeroList();
 
   protected readonly hero = toSignal(
-    this.route.paramMap.pipe(
-      switchMap((params) => {
+    combineLatest([this.route.paramMap, toObservable(this.refreshTrigger)]).pipe(
+      switchMap(([params]) => {
         const id = params.get(ROUTE_PARAMS.id);
 
         if (!id) {
@@ -51,6 +55,14 @@ export class HeroDetailPageComponent {
     ),
     { initialValue: null },
   );
+
+  protected onEdit(hero: Hero): void {
+    this.heroFormFlow.openEdit(hero).subscribe((saved) => {
+      if (saved) {
+        this.refreshTrigger.update((count) => count + 1);
+      }
+    });
+  }
 
   protected editLabel(hero: Hero): string {
     return $localize`Editar ${hero.name}`;

@@ -1,0 +1,26 @@
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-block-start: 8px;
+}
+
+.hero-form__slider {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-block-end: 16px;
+
+  label {
+    font: var(--mat-sys-body-medium);
+    color: var(--mat-sys-on-surface-variant);
+  }
+
+  mat-slider {
+    inline-size: 100%;
+  }
+}
+
+mat-slide-toggle {
+  margin-block-end: 8px;
+}

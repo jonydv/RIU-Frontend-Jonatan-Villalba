@@ -62,7 +62,7 @@
           <mat-icon>arrow_back</mat-icon>
           <span i18n="Label of the back to hero list button">Volver</span>
         </button>
-        <button mat-button type="button" [attr.aria-label]="editLabel(h)">
+        <button mat-button type="button" [attr.aria-label]="editLabel(h)" (click)="onEdit(h)">
           <mat-icon>edit</mat-icon>
           <span i18n="Label of the edit hero button">Editar</span>
         </button>
