@@ -1,1 +1,66 @@
-<h1 i18n="Heading of the hero detail page">Detalle del héroe</h1>
+@if (hero(); as h) {
+  <article class="hero-detail-page">
+    @if (h.imageUrl) {
+      <img [src]="h.imageUrl" [alt]="h.name" class="hero-detail-page__image" />
+    }
+
+    <h1>{{ h.name }}</h1>
+
+    @if (h.alterEgo) {
+      <p class="hero-detail-page__alter-ego">{{ h.alterEgo }}</p>
+    }
+
+    <mat-chip-set>
+      <mat-chip>{{ h.publisher }}</mat-chip>
+      @if (!h.active) {
+        <mat-chip i18n="Chip label for an inactive hero">Inactivo</mat-chip>
+      }
+    </mat-chip-set>
+
+    <section class="hero-detail-page__power">
+      <span i18n="Label of the hero power level bar">Nivel de poder: {{ h.powerLevel }}</span>
+      <mat-progress-bar mode="determinate" [value]="h.powerLevel" />
+    </section>
+
+    <section class="hero-detail-page__powers">
+      <h2 i18n="Heading of the hero powers section">Poderes</h2>
+      <mat-chip-set>
+        @for (power of h.powers; track power) {
+          <mat-chip>{{ power }}</mat-chip>
+        }
+      </mat-chip-set>
+    </section>
+
+    <p class="hero-detail-page__first-appearance">
+      <span i18n="Label of the hero first appearance date">Primera aparición:</span>
+      {{ h.firstAppearance }}
+    </p>
+
+    <div class="hero-detail-page__actions">
+      <button mat-button type="button" [routerLink]="routeToHeroList">
+        <mat-icon>arrow_back</mat-icon>
+        <span i18n="Label of the back to hero list button">Volver</span>
+      </button>
+      <button
+        mat-button
+        type="button"
+        i18n-aria-label="Aria label of the edit hero button"
+        aria-label="Editar héroe"
+      >
+        <mat-icon>edit</mat-icon>
+        <span i18n="Label of the edit hero button">Editar</span>
+      </button>
+      <button
+        mat-button
+        color="warn"
+        type="button"
+        i18n-aria-label="Aria label of the delete hero button"
+        aria-label="Eliminar héroe"
+        (click)="onDelete(h)"
+      >
+        <mat-icon>delete</mat-icon>
+        <span i18n="Label of the delete hero button">Eliminar</span>
+      </button>
+    </div>
+  </article>
+}

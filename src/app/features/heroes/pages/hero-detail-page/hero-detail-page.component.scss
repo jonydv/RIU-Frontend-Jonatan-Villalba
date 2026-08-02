@@ -1,0 +1,21 @@
+.hero-detail-page {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-detail-page__image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.hero-detail-page__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
