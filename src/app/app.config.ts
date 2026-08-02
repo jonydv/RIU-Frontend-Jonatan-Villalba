@@ -5,12 +5,16 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { fakeHeroesBackendInterceptor } from './core/interceptors/fake-heroes-backend.interceptor';
+import { loadingInterceptor } from './core/interceptors/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(withFetch(), withInterceptors([fakeHeroesBackendInterceptor])),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([loadingInterceptor, fakeHeroesBackendInterceptor]),
+    ),
   ],
 };
