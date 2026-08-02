@@ -1,7 +1,7 @@
 import { HERO_PUBLISHERS } from '../constants/hero.constants';
 import type { Hero } from '../models/hero.model';
 
-const HERO_IMAGE_BASE_URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm';
+const HERO_IMAGE_BASE_URL = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md';
 
 export const HERO_SEED: readonly Hero[] = [
   {

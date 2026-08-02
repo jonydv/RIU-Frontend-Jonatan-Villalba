@@ -52,6 +52,14 @@ export class HeroDetailPageComponent {
     { initialValue: null },
   );
 
+  protected editLabel(hero: Hero): string {
+    return $localize`Editar ${hero.name}`;
+  }
+
+  protected deleteLabel(hero: Hero): string {
+    return $localize`Eliminar ${hero.name}`;
+  }
+
   protected onDelete(hero: Hero): void {
     this.heroDeleteFlow.confirm(hero).subscribe((deleted) => {
       if (deleted) {

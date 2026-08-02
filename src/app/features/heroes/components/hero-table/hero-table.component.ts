@@ -49,4 +49,12 @@ export class HeroTableComponent {
   protected readonly actionsColumn = HERO_ACTIONS_COLUMN;
   protected readonly heroFields = HERO_FIELDS;
   protected readonly routeToHeroDetail = routeToHeroDetail;
+
+  protected editLabel(hero: Hero): string {
+    return $localize`Editar ${hero.name}`;
+  }
+
+  protected deleteLabel(hero: Hero): string {
+    return $localize`Eliminar ${hero.name}`;
+  }
 }

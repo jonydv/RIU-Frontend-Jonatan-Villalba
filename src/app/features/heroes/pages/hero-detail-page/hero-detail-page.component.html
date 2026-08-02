@@ -1,66 +1,82 @@
 @if (hero(); as h) {
   <article class="hero-detail-page">
-    @if (h.imageUrl) {
-      <img [src]="h.imageUrl" [alt]="h.name" class="hero-detail-page__image" />
-    }
-
-    <h1>{{ h.name }}</h1>
-
-    @if (h.alterEgo) {
-      <p class="hero-detail-page__alter-ego">{{ h.alterEgo }}</p>
-    }
-
-    <mat-chip-set>
-      <mat-chip>{{ h.publisher }}</mat-chip>
-      @if (!h.active) {
-        <mat-chip i18n="Chip label for an inactive hero">Inactivo</mat-chip>
+    <div class="hero-detail-page__media">
+      @if (h.imageUrl) {
+        <img [src]="h.imageUrl" alt="" aria-hidden="true" class="hero-detail-page__blur" />
+        <img [src]="h.imageUrl" alt="" class="hero-detail-page__image" />
+      } @else {
+        <div class="hero-detail-page__placeholder" aria-hidden="true">
+          <mat-icon>shield</mat-icon>
+        </div>
       }
-    </mat-chip-set>
+    </div>
 
-    <section class="hero-detail-page__power">
-      <span i18n="Label of the hero power level bar">Nivel de poder: {{ h.powerLevel }}</span>
-      <mat-progress-bar mode="determinate" [value]="h.powerLevel" />
-    </section>
-
-    <section class="hero-detail-page__powers">
-      <h2 i18n="Heading of the hero powers section">Poderes</h2>
-      <mat-chip-set>
-        @for (power of h.powers; track power) {
-          <mat-chip>{{ power }}</mat-chip>
+    <div class="hero-detail-page__content">
+      <header>
+        <div class="hero-detail-page__meta">
+          <span class="hero-detail-page__badge">{{ h.publisher }}</span>
+          @if (!h.active) {
+            <span
+              class="hero-detail-page__badge hero-detail-page__badge--inactive"
+              i18n="Badge for an inactive hero"
+              >Inactivo</span
+            >
+          }
+        </div>
+        <h1 class="hero-detail-page__name">{{ h.name }}</h1>
+        @if (h.alterEgo) {
+          <p class="hero-detail-page__alter-ego">{{ h.alterEgo }}</p>
         }
-      </mat-chip-set>
-    </section>
+      </header>
 
-    <p class="hero-detail-page__first-appearance">
-      <span i18n="Label of the hero first appearance date">Primera aparición:</span>
-      {{ h.firstAppearance }}
-    </p>
+      <section>
+        <h2 class="hero-detail-page__section-title" i18n="Label of the hero power level bar">
+          Nivel de poder
+        </h2>
+        <div class="hero-detail-page__power-row">
+          <mat-progress-bar mode="determinate" [value]="h.powerLevel" />
+          <span class="hero-detail-page__power-value">{{ h.powerLevel }}</span>
+        </div>
+      </section>
 
-    <div class="hero-detail-page__actions">
-      <button mat-button type="button" [routerLink]="routeToHeroList">
-        <mat-icon>arrow_back</mat-icon>
-        <span i18n="Label of the back to hero list button">Volver</span>
-      </button>
-      <button
-        mat-button
-        type="button"
-        i18n-aria-label="Aria label of the edit hero button"
-        aria-label="Editar héroe"
-      >
-        <mat-icon>edit</mat-icon>
-        <span i18n="Label of the edit hero button">Editar</span>
-      </button>
-      <button
-        mat-button
-        class="hero-detail-page__danger"
-        type="button"
-        i18n-aria-label="Aria label of the delete hero button"
-        aria-label="Eliminar héroe"
-        (click)="onDelete(h)"
-      >
-        <mat-icon>delete</mat-icon>
-        <span i18n="Label of the delete hero button">Eliminar</span>
-      </button>
+      <section>
+        <h2 class="hero-detail-page__section-title" i18n="Heading of the hero powers section">
+          Poderes
+        </h2>
+        <mat-chip-set>
+          @for (power of h.powers; track power) {
+            <mat-chip>{{ power }}</mat-chip>
+          }
+        </mat-chip-set>
+      </section>
+
+      <section>
+        <h2 class="hero-detail-page__section-title" i18n="Label of the hero first appearance date">
+          Primera aparición
+        </h2>
+        <p class="hero-detail-page__first-appearance">{{ h.firstAppearance }}</p>
+      </section>
+
+      <div class="hero-detail-page__actions">
+        <button mat-button type="button" [routerLink]="routeToHeroList">
+          <mat-icon>arrow_back</mat-icon>
+          <span i18n="Label of the back to hero list button">Volver</span>
+        </button>
+        <button mat-button type="button" [attr.aria-label]="editLabel(h)">
+          <mat-icon>edit</mat-icon>
+          <span i18n="Label of the edit hero button">Editar</span>
+        </button>
+        <button
+          mat-button
+          class="hero-detail-page__danger"
+          type="button"
+          [attr.aria-label]="deleteLabel(h)"
+          (click)="onDelete(h)"
+        >
+          <mat-icon>delete</mat-icon>
+          <span i18n="Label of the delete hero button">Eliminar</span>
+        </button>
+      </div>
     </div>
   </article>
 }

@@ -1,4 +1,11 @@
-<h1 i18n="Heading of the hero list page">Superhéroes</h1>
+<header class="hero-list-page__header">
+  <div>
+    <h1 class="hero-list-page__title" i18n="Heading of the hero list page">Superhéroes</h1>
+    <p class="hero-list-page__subtitle" i18n="Total number of heroes found">
+      {{ store.heroPage().total }} héroes encontrados
+    </p>
+  </div>
+</header>
 
 <div class="hero-list-page__toolbar">
   <app-hero-search-field
@@ -11,13 +18,21 @@
   />
 </div>
 
-@if (store.effectiveViewMode() === viewModes.card) {
+@if (store.heroPage().items.length === 0) {
+  <div class="hero-list-page__empty">
+    <mat-icon class="hero-list-page__empty-icon">search_off</mat-icon>
+    <p i18n="Message shown when no hero matches the search">
+      No encontramos héroes que coincidan con tu búsqueda.
+    </p>
+  </div>
+} @else if (store.effectiveViewMode() === viewModes.card) {
   <app-hero-card-list [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
 } @else {
   <app-hero-table [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
 }
 
 <mat-paginator
+  class="hero-list-page__paginator"
   [length]="store.heroPage().total"
   [pageIndex]="store.pageIndex()"
   [pageSize]="store.pageSize()"

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatIcon } from '@angular/material/icon';
 import { HeroSearchFieldComponent } from '../../components/hero-search-field/hero-search-field.component';
 import { HeroViewModeToggleComponent } from '../../components/hero-view-mode-toggle/hero-view-mode-toggle.component';
 import { HeroCardListComponent } from '../../components/hero-card-list/hero-card-list.component';
@@ -18,6 +19,7 @@ import type { Hero } from '../../models/hero.model';
     HeroCardListComponent,
     HeroTableComponent,
     MatPaginator,
+    MatIcon,
   ],
   providers: [HeroListStoreService],
   templateUrl: './hero-list-page.component.html',

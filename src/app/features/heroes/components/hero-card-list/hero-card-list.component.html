@@ -1,45 +1,60 @@
-<div class="hero-card-list">
+<ul class="hero-card-list">
   @for (hero of heroes(); track hero.id) {
-    <mat-card>
-      <mat-card-header>
-        @if (hero.imageUrl) {
-          <img mat-card-avatar [src]="hero.imageUrl" [alt]="hero.name" />
-        }
-        <mat-card-title>
-          <a [routerLink]="routeToHeroDetail(hero.id)">{{ hero.name }}</a>
-        </mat-card-title>
-        @if (hero.alterEgo) {
-          <mat-card-subtitle>{{ hero.alterEgo }}</mat-card-subtitle>
-        }
-      </mat-card-header>
-      <mat-card-content>
-        <mat-chip-set>
-          <mat-chip>{{ hero.publisher }}</mat-chip>
-          @if (!hero.active) {
-            <mat-chip i18n="Chip label for an inactive hero">Inactivo</mat-chip>
+    <li>
+      <article class="hero-card" [class.hero-card--inactive]="!hero.active">
+        <div class="hero-card__media">
+          @if (hero.imageUrl) {
+            <img [src]="hero.imageUrl" alt="" loading="lazy" class="hero-card__image" />
+          } @else {
+            <div class="hero-card__placeholder" aria-hidden="true">
+              <mat-icon>shield</mat-icon>
+            </div>
           }
-        </mat-chip-set>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button
-          mat-icon-button
-          type="button"
-          i18n-aria-label="Aria label of the edit hero button"
-          aria-label="Editar héroe"
-          (click)="edit.emit(hero)"
-        >
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          type="button"
-          i18n-aria-label="Aria label of the delete hero button"
-          aria-label="Eliminar héroe"
-          (click)="delete.emit(hero)"
-        >
-          <mat-icon>delete</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+        </div>
+
+        <div class="hero-card__actions">
+          <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="editLabel(hero)"
+            (click)="edit.emit(hero)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="deleteLabel(hero)"
+            (click)="delete.emit(hero)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+
+        <div class="hero-card__body">
+          <div class="hero-card__meta">
+            <span class="hero-card__publisher">{{ hero.publisher }}</span>
+            @if (!hero.active) {
+              <span class="hero-card__status" i18n="Badge for an inactive hero">Inactivo</span>
+            }
+          </div>
+
+          <h3 class="hero-card__name">
+            <a [routerLink]="routeToHeroDetail(hero.id)" class="hero-card__link">{{ hero.name }}</a>
+          </h3>
+
+          @if (hero.alterEgo) {
+            <p class="hero-card__alter-ego">{{ hero.alterEgo }}</p>
+          }
+
+          <div class="hero-card__power" [attr.aria-label]="powerLabel(hero)">
+            <span class="hero-card__power-track" aria-hidden="true">
+              <span class="hero-card__power-fill" [style.inline-size.%]="hero.powerLevel"></span>
+            </span>
+            <span class="hero-card__power-value" aria-hidden="true">{{ hero.powerLevel }}</span>
+          </div>
+        </div>
+      </article>
+    </li>
   }
-</div>
+</ul>
