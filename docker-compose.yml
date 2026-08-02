@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+    image: superheroes-app
+    container_name: superheroes-app
+    ports:
+      - '4000:4000'
+    environment:
+      PORT: 4000
+    restart: unless-stopped
