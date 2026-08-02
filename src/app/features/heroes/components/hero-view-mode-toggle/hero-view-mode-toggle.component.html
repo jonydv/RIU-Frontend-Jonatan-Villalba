@@ -1,0 +1,22 @@
+<mat-button-toggle-group
+  class="hero-view-mode-toggle"
+  [value]="viewMode()"
+  (change)="onChange($event)"
+  i18n-aria-label="Aria label of the hero list view mode toggle group"
+  aria-label="Modo de vista de la lista"
+>
+  <mat-button-toggle
+    [value]="viewModes.card"
+    i18n-aria-label="Aria label of the card view mode option"
+    aria-label="Vista de tarjetas"
+  >
+    <mat-icon>view_module</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle
+    [value]="viewModes.table"
+    i18n-aria-label="Aria label of the table view mode option"
+    aria-label="Vista de tabla"
+  >
+    <mat-icon>table_rows</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

@@ -22,3 +22,10 @@ export const HERO_TABLE_COLUMNS = [
 ] as const;
 
 export type HeroTableColumn = (typeof HERO_TABLE_COLUMNS)[number];
+
+export const HERO_VIEW_MODE = {
+  card: 'card',
+  table: 'table',
+} as const;
+
+export type HeroViewMode = (typeof HERO_VIEW_MODE)[keyof typeof HERO_VIEW_MODE];

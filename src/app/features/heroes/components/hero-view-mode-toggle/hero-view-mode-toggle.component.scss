@@ -1,0 +1,9 @@
+// Hidden via CSS, not `@if (!isHandset())`, so this never participates in hydration:
+// BreakpointObserver never matches on the server, and toggling this with a structural
+// directive would render it in the server HTML and remove it on a real mobile client.
+// Keep this media feature in sync with BREAKPOINT_QUERIES.handset in layout.constants.ts.
+@media (max-width: 599.98px) {
+  .hero-view-mode-toggle {
+    display: none;
+  }
+}
