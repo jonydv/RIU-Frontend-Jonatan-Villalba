@@ -1,1 +1,27 @@
 <h1 i18n="Heading of the hero list page">Superhéroes</h1>
+
+<div class="hero-list-page__toolbar">
+  <app-hero-search-field
+    [searchTerm]="store.searchTerm()"
+    (searchTermChange)="store.setSearchTerm($event)"
+  />
+  <app-hero-view-mode-toggle
+    [viewMode]="store.viewMode()"
+    (viewModeChange)="store.setViewMode($event)"
+  />
+</div>
+
+@if (store.effectiveViewMode() === viewModes.card) {
+  <app-hero-card-list [heroes]="store.heroPage().items" />
+} @else {
+  <app-hero-table [heroes]="store.heroPage().items" />
+}
+
+<mat-paginator
+  [length]="store.heroPage().total"
+  [pageIndex]="store.pageIndex()"
+  [pageSize]="store.pageSize()"
+  [pageSizeOptions]="pageSizeOptions"
+  [hidePageSize]="isHandset()"
+  (page)="onPageChange($event)"
+/>
