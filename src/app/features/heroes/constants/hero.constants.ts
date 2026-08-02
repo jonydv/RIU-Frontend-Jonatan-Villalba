@@ -21,3 +21,5 @@ export const HERO_PUBLISHERS = {
 export type HeroPublisher = (typeof HERO_PUBLISHERS)[keyof typeof HERO_PUBLISHERS];
 
 export const HERO_PUBLISHER_VALUES: readonly HeroPublisher[] = Object.values(HERO_PUBLISHERS);
+
+export const HERO_SEARCH_MAX_RESULTS = 50;
