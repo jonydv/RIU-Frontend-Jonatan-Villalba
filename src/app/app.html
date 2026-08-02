@@ -1,7 +1,9 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="app-toolbar">
   <a [routerLink]="heroesPath" i18n="Application title, links back to the hero list">
     Superhéroes RIU
   </a>
 </mat-toolbar>
 <app-loading-overlay />
-<router-outlet />
+<main class="app-content">
+  <router-outlet />
+</main>

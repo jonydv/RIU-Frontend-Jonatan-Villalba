@@ -1,4 +1,15 @@
-a {
-  color: inherit;
-  text-decoration: none;
+.app-toolbar {
+  --mat-toolbar-container-background-color: var(--mat-sys-primary);
+  --mat-toolbar-container-text-color: var(--mat-sys-on-primary);
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.app-content {
+  display: block;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
 }

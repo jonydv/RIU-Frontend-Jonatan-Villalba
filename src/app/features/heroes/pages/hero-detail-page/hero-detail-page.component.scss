@@ -19,3 +19,7 @@
   gap: 8px;
   justify-content: flex-end;
 }
+
+.hero-detail-page__danger {
+  --mat-button-text-label-text-color: var(--mat-sys-error);
+}

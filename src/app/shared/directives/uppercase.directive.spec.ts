@@ -58,8 +58,6 @@ describe('UppercaseDirective', () => {
     let emissions = 0;
     host.control.valueChanges.subscribe(() => emissions++);
 
-    // The bound value accessor always writes once per input event; the directive
-    // only adds a second write when it actually has to uppercase something.
     typeAt(input, 'HULK', 4);
     expect(emissions).toBe(1);
 
