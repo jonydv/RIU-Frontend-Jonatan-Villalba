@@ -13,7 +13,7 @@
     "lint:fix": "ng lint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "i18n:extract": "ng extract-i18n --output-path src/locale"
+    "i18n:extract": "ng extract-i18n"
   },
   "private": true,
   "packageManager": "npm@11.16.0",

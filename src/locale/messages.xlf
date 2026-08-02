@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="9112101106792214921" datatype="html">
+        <source>Superhéroes RIU</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">4,8</context>
+        </context-group>
+        <note priority="1" from="description">Application title, links back to the hero list</note>
+      </trans-unit>
+      <trans-unit id="3838676801008878481" datatype="html">
+        <source>Inactivo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-card-list/hero-card-list.component.html</context>
+          <context context-type="linenumber">38,41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">57,61</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">22,25</context>
+        </context-group>
+        <note priority="1" from="description">Badge for an inactive hero</note>
+      </trans-unit>
+      <trans-unit id="5324892388519202446" datatype="html">
+        <source>Editar <x id="PH" equiv-text="hero.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-card-list/hero-card-list.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2880101844320101299" datatype="html">
+        <source>Eliminar <x id="PH" equiv-text="hero.name"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-card-list/hero-card-list.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="726453313694217948" datatype="html">
+        <source>Nivel de poder <x id="PH" equiv-text="hero.powerLevel"/> de 100</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-card-list/hero-card-list.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7385216380696688937" datatype="html">
+        <source>Nuevo héroe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-list-page/hero-list-page.component.html</context>
+          <context context-type="linenumber">10,14</context>
+        </context-group>
+        <note priority="1" from="description">Title of the create hero dialog</note>
+      </trans-unit>
+      <trans-unit id="8197689136042879211" datatype="html">
+        <source>Editar héroe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">4,8</context>
+        </context-group>
+        <note priority="1" from="description">Title of the edit hero dialog</note>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero name field</note>
+      </trans-unit>
+      <trans-unit id="8789006212776777503" datatype="html">
+        <source>Verificando…</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <note priority="1" from="description">Hint shown while the hero name is being validated</note>
+      </trans-unit>
+      <trans-unit id="6657001946303847341" datatype="html">
+        <source>El nombre es obligatorio.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the hero name is empty</note>
+      </trans-unit>
+      <trans-unit id="7584255892093492148" datatype="html">
+        <source> Mínimo <x id="INTERPOLATION" equiv-text="{{ limits.nameMinLength }}"/> caracteres. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the hero name is too short</note>
+      </trans-unit>
+      <trans-unit id="7952072959218536598" datatype="html">
+        <source> Máximo <x id="INTERPOLATION" equiv-text="{{ limits.nameMaxLength }}"/> caracteres. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the hero name is too long</note>
+      </trans-unit>
+      <trans-unit id="5086302032940231051" datatype="html">
+        <source> Ya existe un héroe con ese nombre. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">27,30</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the hero name already exists</note>
+      </trans-unit>
+      <trans-unit id="6873806236290728741" datatype="html">
+        <source>Alter ego</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero alter ego field</note>
+      </trans-unit>
+      <trans-unit id="8695523401386938003" datatype="html">
+        <source>URL de la imagen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero image url field</note>
+      </trans-unit>
+      <trans-unit id="7723532508825369260" datatype="html">
+        <source>Editorial</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero publisher field</note>
+      </trans-unit>
+      <trans-unit id="3055890073963404733" datatype="html">
+        <source>Poderes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero powers field</note>
+      </trans-unit>
+      <trans-unit id="537180738886619736" datatype="html">
+        <source>Agregar poder</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+        <note priority="1" from="description">Placeholder of the hero powers field</note>
+      </trans-unit>
+      <trans-unit id="1694458877055084236" datatype="html">
+        <source> Agregá al menos un poder. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">79,82</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the hero has no powers</note>
+      </trans-unit>
+      <trans-unit id="9163831192435210774" datatype="html">
+        <source> Nivel de poder: <x id="INTERPOLATION" equiv-text="{{ form.controls.powerLevel.value }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">86,88</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero power level field</note>
+      </trans-unit>
+      <trans-unit id="4501189938914657526" datatype="html">
+        <source>Primera aparición</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero first appearance field</note>
+      </trans-unit>
+      <trans-unit id="7961385144244760554" datatype="html">
+        <source> La fecha es obligatoria. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">98,100</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the first appearance date is empty</note>
+      </trans-unit>
+      <trans-unit id="5198589972080361946" datatype="html">
+        <source> La fecha no puede ser futura. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">102,107</context>
+        </context-group>
+        <note priority="1" from="description">Error shown when the first appearance date is in the future</note>
+      </trans-unit>
+      <trans-unit id="108116058471098607" datatype="html">
+        <source> Héroe activo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">108,111</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero active toggle</note>
+      </trans-unit>
+      <trans-unit id="6060080757060540228" datatype="html">
+        <source> Cancelar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">115,118</context>
+        </context-group>
+        <note priority="1" from="description">Label of the cancel button</note>
+      </trans-unit>
+      <trans-unit id="4113182804267037649" datatype="html">
+        <source> Guardar </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-form-dialog/hero-form-dialog.component.html</context>
+          <context context-type="linenumber">124,126</context>
+        </context-group>
+        <note priority="1" from="description">Label of the save button</note>
+      </trans-unit>
+      <trans-unit id="8742651817642749402" datatype="html">
+        <source>Buscar héroe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-search-field/hero-search-field.component.html</context>
+          <context context-type="linenumber">2,5</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero search input</note>
+      </trans-unit>
+      <trans-unit id="2139393425630217809" datatype="html">
+        <source>Nombre del héroe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-search-field/hero-search-field.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+        <note priority="1" from="description">Placeholder of the hero search input</note>
+      </trans-unit>
+      <trans-unit id="8257244188910269703" datatype="html">
+        <source> Imagen </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero image column</note>
+      </trans-unit>
+      <trans-unit id="615832132592175406" datatype="html">
+        <source> Alter ego </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">27,29</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero alter ego column</note>
+      </trans-unit>
+      <trans-unit id="2584004328321594067" datatype="html">
+        <source> Editorial </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero publisher column</note>
+      </trans-unit>
+      <trans-unit id="6668430657928309457" datatype="html">
+        <source> Poder </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero power level column</note>
+      </trans-unit>
+      <trans-unit id="1421606734317228237" datatype="html">
+        <source> Estado </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero status column</note>
+      </trans-unit>
+      <trans-unit id="5308089386353373336" datatype="html">
+        <source>Activo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">52,55</context>
+        </context-group>
+        <note priority="1" from="description">Status label for an active hero</note>
+      </trans-unit>
+      <trans-unit id="907580602948299464" datatype="html">
+        <source> Acciones </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-table/hero-table.component.html</context>
+          <context context-type="linenumber">65,67</context>
+        </context-group>
+        <note priority="1" from="description">Table header for the hero actions column</note>
+      </trans-unit>
+      <trans-unit id="1744217117838510779" datatype="html">
+        <source>Modo de vista de la lista</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-view-mode-toggle/hero-view-mode-toggle.component.html</context>
+          <context context-type="linenumber">7,11</context>
+        </context-group>
+        <note priority="1" from="description">Aria label of the hero list view mode toggle group</note>
+      </trans-unit>
+      <trans-unit id="1631601272485464001" datatype="html">
+        <source>Vista de tarjetas</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-view-mode-toggle/hero-view-mode-toggle.component.html</context>
+          <context context-type="linenumber">12,15</context>
+        </context-group>
+        <note priority="1" from="description">Aria label of the card view mode option</note>
+      </trans-unit>
+      <trans-unit id="7813995248711311463" datatype="html">
+        <source>Vista de tabla</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/components/hero-view-mode-toggle/hero-view-mode-toggle.component.html</context>
+          <context context-type="linenumber">19,22</context>
+        </context-group>
+        <note priority="1" from="description">Aria label of the table view mode option</note>
+      </trans-unit>
+      <trans-unit id="4257945029257374775" datatype="html">
+        <source> Nivel de poder </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero power level bar</note>
+      </trans-unit>
+      <trans-unit id="1725596749968103746" datatype="html">
+        <source> Poderes </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">44,47</context>
+        </context-group>
+        <note priority="1" from="description">Heading of the hero powers section</note>
+      </trans-unit>
+      <trans-unit id="4426191019127860419" datatype="html">
+        <source> Primera aparición </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">55,57</context>
+        </context-group>
+        <note priority="1" from="description">Label of the hero first appearance date</note>
+      </trans-unit>
+      <trans-unit id="7329584700537079690" datatype="html">
+        <source>Volver</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">63,65</context>
+        </context-group>
+        <note priority="1" from="description">Label of the back to hero list button</note>
+      </trans-unit>
+      <trans-unit id="2153980152639237955" datatype="html">
+        <source>Editar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">67,70</context>
+        </context-group>
+        <note priority="1" from="description">Label of the edit hero button</note>
+      </trans-unit>
+      <trans-unit id="6665903341931535342" datatype="html">
+        <source>Eliminar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-detail-page/hero-detail-page.component.html</context>
+          <context context-type="linenumber">77,80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description">Label of the delete hero button</note>
+      </trans-unit>
+      <trans-unit id="2207108929223064368" datatype="html">
+        <source>Superhéroes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-list-page/hero-list-page.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <note priority="1" from="description">Heading of the hero list page</note>
+      </trans-unit>
+      <trans-unit id="8004939254967272683" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ store.heroPage().total }}"/> héroes encontrados </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-list-page/hero-list-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Total number of heroes found</note>
+      </trans-unit>
+      <trans-unit id="4970960992015024626" datatype="html">
+        <source> No encontramos héroes que coincidan con tu búsqueda. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/hero-list-page/hero-list-page.component.html</context>
+          <context context-type="linenumber">29,32</context>
+        </context-group>
+        <note priority="1" from="description">Message shown when no hero matches the search</note>
+      </trans-unit>
+      <trans-unit id="2274940244648782827" datatype="html">
+        <source>Página no encontrada</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <note priority="1" from="description">Heading of the not found page</note>
+      </trans-unit>
+      <trans-unit id="2620993122925186800" datatype="html">
+        <source> La página que buscás no existe o el héroe ya no está disponible. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Message of the not found page</note>
+      </trans-unit>
+      <trans-unit id="4278426800599714641" datatype="html">
+        <source> Volver a la lista de héroes </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">10,14</context>
+        </context-group>
+        <note priority="1" from="description">Label of the back to hero list button on the not found page</note>
+      </trans-unit>
+      <trans-unit id="5890507398815959132" datatype="html">
+        <source>Eliminar héroe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8780892535731985996" datatype="html">
+        <source>¿Seguro que querés eliminar a <x id="PH" equiv-text="hero.name"/>? Esta acción no se puede deshacer.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6402951927316857780" datatype="html">
+        <source>Cancelar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2157674380576016015" datatype="html">
+        <source>Héroe eliminado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4798961227159743968" datatype="html">
+        <source>Cerrar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-delete-flow.service.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-form-flow.service.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8908800436729712898" datatype="html">
+        <source>Héroe creado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-form-flow.service.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8688495563896237491" datatype="html">
+        <source>Héroe actualizado</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/heroes/services/hero-form-flow.service.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

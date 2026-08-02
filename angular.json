@@ -17,6 +17,9 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "es"
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -95,7 +98,21 @@
               "src/app/app.routes.server.ts",
               "src/environments/**",
               "src/app/**/*.data.ts"
-            ]
+            ],
+            "coverageThresholds": {
+              "statements": 80,
+              "branches": 80,
+              "functions": 80,
+              "lines": 80
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "buildTarget": "superheroes-app:build",
+            "outputPath": "src/locale",
+            "format": "xlf"
           }
         },
         "lint": {
