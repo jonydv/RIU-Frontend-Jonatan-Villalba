@@ -1,0 +1,45 @@
+<div class="hero-card-list">
+  @for (hero of heroes(); track hero.id) {
+    <mat-card>
+      <mat-card-header>
+        @if (hero.imageUrl) {
+          <img mat-card-avatar [src]="hero.imageUrl" [alt]="hero.name" />
+        }
+        <mat-card-title>
+          <a [routerLink]="routeToHeroDetail(hero.id)">{{ hero.name }}</a>
+        </mat-card-title>
+        @if (hero.alterEgo) {
+          <mat-card-subtitle>{{ hero.alterEgo }}</mat-card-subtitle>
+        }
+      </mat-card-header>
+      <mat-card-content>
+        <mat-chip-set>
+          <mat-chip>{{ hero.publisher }}</mat-chip>
+          @if (!hero.active) {
+            <mat-chip i18n="Chip label for an inactive hero">Inactivo</mat-chip>
+          }
+        </mat-chip-set>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button
+          mat-icon-button
+          type="button"
+          i18n-aria-label="Aria label of the edit hero button"
+          aria-label="Editar héroe"
+          (click)="edit.emit(hero)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          type="button"
+          i18n-aria-label="Aria label of the delete hero button"
+          aria-label="Eliminar héroe"
+          (click)="delete.emit(hero)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>
