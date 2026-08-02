@@ -17,8 +17,17 @@ const EMPTY_HERO_PAGE: HeroPage<Hero> = {
   size: DEFAULT_PAGE.pageSize,
 };
 
-function isSameQuery(a: HeroQuery, b: HeroQuery): boolean {
-  return a.search === b.search && a.page === b.page && a.size === b.size;
+interface HeroListRequest extends HeroQuery {
+  readonly refreshTrigger: number;
+}
+
+function isSameRequest(a: HeroListRequest, b: HeroListRequest): boolean {
+  return (
+    a.search === b.search &&
+    a.page === b.page &&
+    a.size === b.size &&
+    a.refreshTrigger === b.refreshTrigger
+  );
 }
 
 @Injectable()
@@ -31,6 +40,7 @@ export class HeroListStoreService {
   private readonly pageIndexSignal = signal<number>(DEFAULT_PAGE.pageIndex);
   private readonly pageSizeSignal = signal<number>(DEFAULT_PAGE.pageSize);
   private readonly viewModeSignal = signal<HeroViewMode>(HERO_VIEW_MODE.card);
+  private readonly refreshTriggerSignal = signal(0);
 
   readonly searchTerm = this.searchTermSignal.asReadonly();
   readonly pageIndex = this.pageIndexSignal.asReadonly();
@@ -41,17 +51,24 @@ export class HeroListStoreService {
     this.layoutService.isHandset() ? HERO_VIEW_MODE.card : this.viewModeSignal(),
   );
 
-  private readonly query = computed<HeroQuery>(() => ({
+  private readonly request = computed<HeroListRequest>(() => ({
     search: this.searchTermSignal(),
     page: this.pageIndexSignal(),
     size: this.pageSizeSignal(),
+    refreshTrigger: this.refreshTriggerSignal(),
   }));
 
   readonly heroPage = toSignal(
-    toObservable(this.query).pipe(
+    toObservable(this.request).pipe(
       debounceTime(SEARCH_DEBOUNCE_MS),
-      distinctUntilChanged(isSameQuery),
-      switchMap((query) => this.heroService.getHeroes(query)),
+      distinctUntilChanged(isSameRequest),
+      switchMap((request) =>
+        this.heroService.getHeroes({
+          search: request.search,
+          page: request.page,
+          size: request.size,
+        }),
+      ),
     ),
     { initialValue: EMPTY_HERO_PAGE },
   );
@@ -85,5 +102,9 @@ export class HeroListStoreService {
     if (this.isBrowser) {
       localStorage.setItem(STORAGE_KEYS.heroListViewMode, viewMode);
     }
+  }
+
+  refresh(): void {
+    this.refreshTriggerSignal.update((count) => count + 1);
   }
 }

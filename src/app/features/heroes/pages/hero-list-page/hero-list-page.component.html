@@ -12,9 +12,9 @@
 </div>
 
 @if (store.effectiveViewMode() === viewModes.card) {
-  <app-hero-card-list [heroes]="store.heroPage().items" />
+  <app-hero-card-list [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
 } @else {
-  <app-hero-table [heroes]="store.heroPage().items" />
+  <app-hero-table [heroes]="store.heroPage().items" (delete)="onDelete($event)" />
 }
 
 <mat-paginator
