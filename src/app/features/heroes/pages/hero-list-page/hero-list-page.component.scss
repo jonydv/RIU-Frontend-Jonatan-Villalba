@@ -1,0 +1,60 @@
+.hero-list-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-block-end: 20px;
+}
+
+.hero-list-page__title {
+  font: var(--mat-sys-headline-large);
+  margin: 0;
+}
+
+.hero-list-page__subtitle {
+  font: var(--mat-sys-body-medium);
+  color: var(--mat-sys-on-surface-variant);
+  margin: 4px 0 0;
+}
+
+.hero-list-page__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 24px;
+
+  app-hero-search-field {
+    flex: 1;
+    min-inline-size: 0;
+  }
+}
+
+.hero-list-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 64px 16px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  border: 1px dashed var(--mat-sys-outline-variant);
+  border-radius: var(--mat-sys-corner-large);
+}
+
+.hero-list-page__empty-icon {
+  inline-size: 48px;
+  block-size: 48px;
+  font-size: 48px;
+}
+
+.hero-list-page__paginator {
+  margin-block-start: 24px;
+  border-radius: var(--mat-sys-corner-large);
+  background-color: var(--mat-sys-surface);
+}
+
+@media (max-width: 599.98px) {
+  .hero-list-page__title {
+    font: var(--mat-sys-headline-medium);
+  }
+}

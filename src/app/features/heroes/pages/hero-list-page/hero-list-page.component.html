@@ -1,0 +1,54 @@
+<header class="hero-list-page__header">
+  <div>
+    <h1 class="hero-list-page__title" i18n="Heading of the hero list page">Superhéroes</h1>
+    <p class="hero-list-page__subtitle" i18n="Total number of heroes found">
+      {{ store.heroPage().total }} héroes encontrados
+    </p>
+  </div>
+  <button mat-flat-button type="button" (click)="onCreate()">
+    <mat-icon>add</mat-icon>
+    <span i18n="Label of the create hero button">Nuevo héroe</span>
+  </button>
+</header>
+
+<div class="hero-list-page__toolbar">
+  <app-hero-search-field
+    [searchTerm]="store.searchTerm()"
+    (searchTermChange)="store.setSearchTerm($event)"
+  />
+  <app-hero-view-mode-toggle
+    [viewMode]="store.viewMode()"
+    (viewModeChange)="store.setViewMode($event)"
+  />
+</div>
+
+@if (store.heroPage().items.length === 0) {
+  <div class="hero-list-page__empty">
+    <mat-icon class="hero-list-page__empty-icon">search_off</mat-icon>
+    <p i18n="Message shown when no hero matches the search">
+      No encontramos héroes que coincidan con tu búsqueda.
+    </p>
+  </div>
+} @else if (store.effectiveViewMode() === viewModes.card) {
+  <app-hero-card-list
+    [heroes]="store.heroPage().items"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  />
+} @else {
+  <app-hero-table
+    [heroes]="store.heroPage().items"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+  />
+}
+
+<mat-paginator
+  class="hero-list-page__paginator"
+  [length]="store.heroPage().total"
+  [pageIndex]="store.pageIndex()"
+  [pageSize]="store.pageSize()"
+  [pageSizeOptions]="pageSizeOptions"
+  [hidePageSize]="isHandset()"
+  (page)="onPageChange($event)"
+/>

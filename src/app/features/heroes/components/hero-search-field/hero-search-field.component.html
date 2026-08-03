@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" subscriptSizing="dynamic">
+  <mat-label i18n="Label of the hero search input">Buscar héroe</mat-label>
+  <input
+    matInput
+    type="text"
+    autocomplete="off"
+    [value]="searchTerm()"
+    (input)="onInput($event)"
+    i18n-placeholder="Placeholder of the hero search input"
+    placeholder="Nombre del héroe"
+  />
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>

@@ -1,0 +1,14 @@
+node_modules
+dist
+coverage
+.angular
+.git
+.gitignore
+.vscode
+*.md
+.editorconfig
+.prettierrc
+.prettierignore
+Dockerfile
+.dockerignore
+docker-compose.yml

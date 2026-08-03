@@ -1,0 +1,13 @@
+<div class="not-found-page">
+  <mat-icon class="not-found-page__icon">search_off</mat-icon>
+  <h1 i18n="Heading of the not found page">Página no encontrada</h1>
+  <p i18n="Message of the not found page">
+    La página que buscás no existe o el héroe ya no está disponible.
+  </p>
+  <button mat-flat-button type="button" [routerLink]="routeToHeroList">
+    <mat-icon>arrow_back</mat-icon>
+    <span i18n="Label of the back to hero list button on the not found page">
+      Volver a la lista de héroes
+    </span>
+  </button>
+</div>

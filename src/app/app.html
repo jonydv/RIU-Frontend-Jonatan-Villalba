@@ -1,0 +1,10 @@
+<mat-toolbar class="app-toolbar">
+  <a [routerLink]="heroesPath" class="app-toolbar__brand">
+    <mat-icon>shield</mat-icon>
+    <span i18n="Application title, links back to the hero list">Superhéroes RIU</span>
+  </a>
+</mat-toolbar>
+<app-loading-overlay />
+<main class="app-content">
+  <router-outlet />
+</main>
